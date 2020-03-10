@@ -18,9 +18,8 @@ for i in range(1956):
     label = l.readline()
     label = label.strip('\n')
    # s = "insulin" #multiple string to joined eg i take insulin
-    r = re.compile(r'\binsulin\b | \bI\b | \bHave\b', flags=re.I | re.X)
+    r = re.compile(r'\binsulin\b | \bI\b | \bHave\b | \bdiabetes\b | \bmyself\b | \bme\b | \bmy\b', flags=re.I | re.X)
     x = re.findall(r, sentence)
-    #print(x)
     if(x and label == '1'):
         c = c + 1
 print(accuracy(c)) 
