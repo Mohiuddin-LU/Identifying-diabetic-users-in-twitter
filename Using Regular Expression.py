@@ -7,12 +7,12 @@ Created on Tue Mar 10 14:50:05 2020
 
 import re
 def accuracy(count):
-    return (count/1956)*100
+    return (count/lab)*100
 #reading label and text from a separate files
 f = open("text.txt", "r")
 l = open("label.txt", "r")
 c = 0
-
+lab = 0
 for i in range(1956):
     sentence = f.readline()
     label = l.readline()
@@ -22,4 +22,6 @@ for i in range(1956):
     x = re.findall(r, sentence)
     if(x and label == '1'):
         c = c + 1
+    if(label == '1'):
+        lab = lab + 1
 print(accuracy(c)) 
